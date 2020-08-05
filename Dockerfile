@@ -8,7 +8,7 @@ LABEL maintainer="marcos.lima@simpleagro.com.br"
 USER root
 
 RUN pip install --upgrade pip apache-airflow \
-    # && pip install apache-airflow \
+    && pip install ipykernel \
     && pip install papermill \
     && apt-get clean \
     && rm -rf \
