@@ -10,6 +10,7 @@ USER root
 RUN pip install --upgrade pip apache-airflow \
     && pip install ipykernel \
     && pip install papermill \
+    && pip install flask_bcrypt \
     && apt-get clean \
     && rm -rf \
         /var/lib/apt/lists/* \
