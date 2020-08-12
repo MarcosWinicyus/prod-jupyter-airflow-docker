@@ -10,6 +10,17 @@ USER root
 RUN pip install --upgrade pip apache-airflow \
     && pip install ipykernel \
     && pip install papermill \
+    && pip install suds-jurko \
+    && pip install xmltodict \
+    && pip install Unidecode \
+    && pip install kafka-python \
+    && pip install openpyxl \
+    && pip install HTMLParser\
+    && pip install pyPdf \
+    && pip install python-slugify \
+    && pip install pymongo \
+    && pip install pandas \
+    && pip install numpy \
     && apt-get clean \
     && rm -rf \
         /var/lib/apt/lists/* \

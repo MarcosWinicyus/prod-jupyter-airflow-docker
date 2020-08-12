@@ -25,8 +25,8 @@ with DAG(
     for i in range(3):
         task = PapermillOperator(
             task_id='note_runme_' + str(i),
-            input_nb='dags/notebooks/runme_' + str(i) + '.ipynb',
-            output_nb="dags/notebooks/saida.ipynb",
+            input_nb='dags/notebooks/example_notebook_parallelism/runme_' + str(i) + '.ipynb',
+            output_nb="dags/notebooks/outnbs/out.ipynb",
             parameters={"msgs": "Tarefa paralela " + str(i), "time": "{{ execution_date }}"}
         )
         task >> opr_hello
@@ -38,8 +38,8 @@ with DAG(
 
     run_this = PapermillOperator(
         task_id="run_example_notebook",
-        input_nb="dags/notebooks/hello_world.ipynb",
-        output_nb="dags/notebooks/out.ipynb",
+        input_nb="dags/notebooks/example_notebook_parallelism/hello_world.ipynb",
+        output_nb="dags/notebooks/outnbs/out.ipynb",
         parameters={"msgs": "Ran from Airflow at {{ execution_date }}!"}
     )
 

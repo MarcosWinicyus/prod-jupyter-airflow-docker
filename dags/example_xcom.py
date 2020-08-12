@@ -1,6 +1,6 @@
 from airflow import DAG
 from airflow.utils.dates import days_ago
-from airflow.operators import PythonOperator
+from airflow.operators.python_operator import PythonOperator
 import pprint
 
 args = {
@@ -8,7 +8,7 @@ args = {
     'start_date': days_ago(2),
 }
 
-dag = DAG('example_xcom_v3', schedule_interval=None, default_args=args, tags=['example'])
+dag = DAG('example_xcom', schedule_interval=None, default_args=args, tags=['example'])
 
 def pusher(**kwargs):
 	base= kwargs['ti'].xcom_pull(key=None, task_ids='push_1')
