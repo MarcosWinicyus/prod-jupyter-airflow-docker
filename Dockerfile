@@ -21,6 +21,7 @@ RUN pip install --upgrade pip apache-airflow \
     && pip install pymongo \
     && pip install pandas \
     && pip install numpy \
+    && pip install PyPDF2 \
     && apt-get clean \
     && rm -rf \
         /var/lib/apt/lists/* \
