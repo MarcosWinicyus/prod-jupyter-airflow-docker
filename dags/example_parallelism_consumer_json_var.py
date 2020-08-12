@@ -40,11 +40,11 @@ with DAG(
         )
         create_vars >> task >> print_json_var
     
-    # delete_vars = PapermillOperator(
-    #     task_id="delete",
-    #     input_nb="dags/notebooks/example_parallelism_consumer_json_var/delete_json_var.ipynb",
-    #     output_nb="dags/notebooks/outnbs/out-delete_json_var.ipynb",
-    #     parameters={"msgs": 'deleted' }
-    # )
+    delete_vars = PapermillOperator(
+        task_id="delete",
+        input_nb="dags/notebooks/example_parallelism_consumer_json_var/delete_json_var.ipynb",
+        output_nb="dags/notebooks/outnbs/out-delete_json_var.ipynb",
+        parameters={"msgs": 'deleted' }
+    )
 
-    # print_json_var >> delete_vars
+    print_json_var >> delete_vars
